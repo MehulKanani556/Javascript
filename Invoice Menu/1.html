@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu-item {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.menu-item h2 {
+  margin-top: 0;
+}
+
+.menu-item p {
+  margin-bottom: 0;
+}
+
+.menu-item img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+  </style>
+  <script type="text/javascript">
+    // Sample menu data
+const menuItems = [
+  {
+    name: 'Pizza',
+    description: 'Delicious pizza with a variety of toppings.',
+    price: 9.99,
+    image: 'pizza.jpg'
+  },
+  {
+    name: 'Burger',
+    description: 'Juicy beef burger with cheese and vegetables.',
+    price: 8.99,
+    image: 'burger.jpg'
+  },
+  {
+    name: 'Pasta',
+    description: 'Classic pasta dish with marinara sauce.',
+    price: 11.99,
+    image: 'pasta.jpg'
+  }
+];
+
+// Generate menu items
+const menuContainer = document.getElementById('menu');
+
+menuItems.forEach(item => {
+  const menuItem = document.createElement('div');
+  menuItem.classList.add('menu-item');
+
+  const image = document.createElement('img');
+  image.src = item.image;
+  menuItem.appendChild(image);
+
+  const name = document.createElement('h2');
+  name.textContent = item.name;
+  menuItem.appendChild(name);
+
+  const description = document.createElement('p');
+  description.textContent = item.description;
+  menuItem.appendChild(description);
+
+  const price = document.createElement('p');
+  price.textContent = `$${item.price.toFixed(2)}`;
+  menuItem.appendChild(price);
+
+  menuContainer.appendChild(menuItem);
+});
+
+  </script>
+</head>
+<body>
+  <h1>Restaurant Menu</h1>
+  <div id="menu"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

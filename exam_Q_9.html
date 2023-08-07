@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EXAM QUESTION 9</title>
+</head>
+<body>
+
+	<input type="text" id="arr" readonly name="">
+	<input type="text" id="txt"  name="">
+	<input type="button" onclick="run()" value="Click" name="">
+	<script type="text/javascript">
+		var arr = [];
+		function run(){
+			var x = document.getElementById('txt').value;
+			var cnt = 0;
+
+			for (var i = 0; i < arr.length; i++) {
+				if(arr[i]==x){
+					cnt++;
+				}
+			}
+			if(cnt>0){
+				alert("You Enter Same Number ")
+			}
+			else{
+				if(arr.length<10){
+					arr.push(x);
+				}
+				else{
+					arr.shift();
+					arr.push(x);
+				}
+				document.getElementById('arr').value = arr;
+			}
+			document.getElementById('txt').value = "";
+		}
+		
+		
+	</script>
+
+</body>
+</html>

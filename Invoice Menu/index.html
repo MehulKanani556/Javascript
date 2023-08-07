@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant</title>
+
+    <!-- Font Awsome -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <!-- BootStrap Icone -->
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+     <script type="text/javascript">
+        var total = 0;
+        function plus(get,z){
+            var x = parseInt(document.getElementById('a'+z).value);
+            if (get == 2) {             
+                var c = x + 1;
+                 document.getElementById("a"+z).value = c;
+            var y = document.getElementById('a'+z).name;            
+            var bill =parseInt( document.getElementById('bill').value) ;
+            var ans =+parseInt(y);
+            total = total + ans;
+            
+               
+            }else{               
+                var c = x - 1;
+                document.getElementById("a"+z).value = c;
+                var y = document.getElementById('a'+z).name;
+                var bill =parseInt( document.getElementById('bill').value) ;
+                if(bill>0){
+                    var ans =+parseInt(y);
+                    total = total - ans;
+                }
+                
+            }
+            document.getElementById('bill').value = total;
+
+            var gst = total*0.18;
+            document.getElementById('gst').value=gst;
+
+            var tot = total +gst;
+            var dis = tot *0.10;
+            document.getElementById('dis_amt').value = dis;
+
+            var final = tot -dis ;
+            document.getElementById('fbill').value = final;
+           
+           var c1= document.getElementById('c1').name;
+           var c2= document.getElementById('c2').name;
+           var c3= document.getElementById('c3').name;
+           var c4= document.getElementById('c4').name;
+           var c5= document.getElementById('c5').name;
+           var c6= document.getElementById('c6').name;
+           if(z==1){
+                document.getElementById('invoice').innerHTML += c1+"<br>";
+                document.getElementById('qty').innerHTML += c +"<br>";
+                document.getElementById('Price').innerHTML += y*c +"<br>";
+           }else if(z==2){
+                document.getElementById('invoice').innerHTML += c2+"<br>";           
+                document.getElementById('qty').innerHTML  += c +"<br>";
+                document.getElementById('Price').innerHTML += y*c +"<br>";
+           }else if(z==3){
+                document.getElementById('invoice').innerHTML = c3+"<br>";           
+                document.getElementById('qty').innerHTML = c +"<br>";
+                document.getElementById('Price').innerHTML = y*c +"<br>";
+           }else if(z==4){
+                document.getElementById('invoice').innerHTML = c4+"<br>";           
+                document.getElementById('qty').innerHTML = c +"<br>";
+                document.getElementById('Price').innerHTML = y*c +"<br>";
+           }else if(z==5){
+                document.getElementById('invoice').innerHTML = c5+"<br>";           
+                document.getElementById('qty').innerHTML = c +"<br>";
+                document.getElementById('Price').innerHTML = y*c +"<br>";
+           }else if(z==6){
+                document.getElementById('invoice').innerHTML = c6+"<br>";           
+                document.getElementById('qty').innerHTML = c +"<br>";
+                document.getElementById('Price').innerHTML = y*c +"<br>";
+           }
+           
+          
+
+
+        
+           
+
+        }
+    </script>
+    
+
+</head>
+
+<body >
+
+    <div class="bgGreen sticky-top">
+        <div class="container ">
+            <div class="h1 text-danger fw-bolder text-center py-3">Resturant</div>
+        </div>
+    </div>
+    <div class="container spacer">
+        <div class="row g-4 ">
+            <div class="col-md-12  ">
+                <div class="row ">
+                    <div class="col-8 ">
+                        <div class="img">
+                            <img src="Image/1.webp" alt>
+                        </div>
+                    </div>
+                    <div class="col-3 ps-5">
+                        <div class="pro-name">Dhokla</div>
+                        <div class="pro-price" id="b1" value="50">Rs.50/- </div>
+                        <div class="d-flex">
+                            <input type="button" value="-" onclick="plus(1,1)" name="">
+                            <input type="text" id="a1"  value="0" name="50"> 
+                            <input type="button" value="+" id="c1" name="dhokla"  onclick="plus(2,1)" >
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row ">
+                    <div class="col-8">
+                        <div class="img">
+                            <img src="Image/2.jpeg" alt>
+                        </div>
+                    </div>
+                    <div class="col-4 ps-5">
+                        <div class="pro-name">Samosa</div>
+                        <div class="pro-price">Rs.20/- </div>
+                        <div class="d-flex">
+                            <input type="button" value="-" onclick="plus(1,2)" name="">
+                            <input type="text" id="a2"  value="0" name="20"> 
+                            <input type="button" value="+" id="c2" name="Samosa" onclick="plus(2,2)" >
+                        </div>
+
+                        
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container spacer">
+        <div class="row g-4 ">
+            <div class="col-md-12  ">
+                <div class="row  ">
+                    <div class="col-8 ">
+                        <div class="img">
+                            <img src="Image/3.jpg" alt>
+                        </div>
+                    </div>
+                    <div class="col-3 ps-5">
+                        <div class="pro-name">Sandwich</div>
+                        <div class="pro-price">Rs.150/- </div>
+                        <div class="d-flex">
+                            <input type="button" value="-" onclick="plus(1,3)" name="">
+                            <input type="text" id="a3" value="0"  name="150"> 
+                            <input type="button" value="+" id="c3" name="Sandwich" onclick="plus(2,3)" name="">
+                        </div>
+
+                      
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row ">
+                    <div class="col-8">
+                        <div class="img">
+                            <img src="Image/4.webp" alt>
+                        </div>
+                    </div>
+                    <div class="col-4 ps-5">
+                        <div class="pro-name">Panipuri</div>
+                        <div class="pro-price">Rs.20/- </div>
+                        <div class="d-flex">
+                            <input type="button" value="-" onclick="plus(1,4)" name="">
+                            <input type="text" id="a4" value="0"  name="20"> 
+                            <input type="button" value="+" id="c4" name="Panipuri" onclick="plus(2,4)" name="">
+                        </div>
+
+                      
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container spacer main">
+            <div class="row g-4 ">
+                <div class="col-md-12  ">
+                    <div class="row ">
+                        <div class="col-8 ">
+                            <div class="img">
+                                <img src="Image/5.webp" alt>
+                            </div>
+                        </div>
+                        <div class="col-3 ps-5">
+                            <div class="pro-name">Edali </div>
+                            <div class="pro-price">Rs.70/- </div>
+                           <div class="d-flex">
+                            <input type="button" value="-" onclick="plus(1,5)" name="">
+                            <input type="text" id="a5" value="0" name="70"> 
+                            <input type="button" value="+" id="c5" name="Edali" onclick="plus(2,5)" name="">
+                        </div>
+                        
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row ">
+                        <div class="col-8">
+                            <div class="img">
+                                <img src="Image/6.jpg" alt>
+                            </div>
+                        </div>
+                        <div class="col-4 ps-5">
+                            <div class="pro-name">Burger</div>
+                            <div class="pro-price">Rs.99/- </div>
+                           <div class="d-flex">
+                            <input type="button" value="-" onclick="plus(1,6)" name="">
+                            <input type="text" id="a6" value="0" name="99"> 
+                            <input type="button" value="+" id="c6" name="Burger" onclick="plus(2,6)" name="">
+                        </div>
+
+                          
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div> 
+            <div class="div fixed-bottom d-flex justify-content-between" >
+                <div id="invoice"></div>
+                <div id="qty"></div>
+                <div id="Price"></div>
+            </div>
+        </div>
+        
+     
+
+    <div class="bgGreen txtwhite fixed-bottom">
+        <div class="container spacer">
+            <div class="row justify-content-between align-content-center">
+                <div class="col-lg-2 col-12 col-md-5 me-3">
+                    <input type="text" id="bill" readonly placeholder="Bill">
+                </div>
+                <div class="col-lg-2 col-12 col-md-5 me-3">
+                    <input type="text" placeholder="18% Gst" id="gst" value="18 %  GST" readonly>
+
+                </div>
+                <div class="col-lg-2 col-12 col-md-5 me-3">
+                    <input type="text" id="dis_amt" placeholder=" Discount" readonly>
+
+                </div>
+                
+                <div class="col-lg-2 col-12 col-md-5 me-3">
+                    <input type="text" id="fbill" placeholder="Final Bill" readonly>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    
+
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.7.0.min.js"></script>
+
+    <!-- Bootrap js -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+   
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Form Validation</title>
+	<script type="text/javascript">
+		function data() {
+			var name = document.getElementById('name').value;
+			var email = document.getElementById('email').value;
+			var pass = document.getElementById('pass').value;
+			var pass1 = document.getElementById('pass1').value;
+			var cont = document.getElementById('contact').value;
+			var gender1 = document.getElementById('gen1');
+			var gender2 = document.getElementById('gen2');						
+			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var passformat =/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+//name
+			if(name=='')
+			{
+				alert("Enter Name...!");
+				document.getElementById('name').focus();
+				return false;
+			}
+//email
+			if(email=='')
+			{				
+				alert("Enter Email...!");
+				document.getElementById('email').focus();
+				return false;
+			}else{
+				if(!email.match(mailformat))
+				{
+					alert("Enter Valid Email ...!");
+					document.getElementById('email').focus();
+					return false;
+				}
+			}
+//password
+			if (pass == '') {
+				alert("Enter Password...!");
+				document.getElementById('pass').focus();
+				return false;
+			} else {
+				if(!pass.match(passformat)){
+					alert("Password must contain a-z / A-Z /0-9 And one Special character");
+					document.getElementById('pass').focus();
+					return false;
+				}
+			}
+// confirm Password
+			if(pass1==''){
+				alert("Enter confirm Password...!");
+				document.getElementById('pass1').focus();
+				return false;
+			}
+			else{
+				if(pass1 != pass)
+				{
+					alert("Enter correct Password");
+					document.getElementById('pass1').focus();
+					return false;
+				}
+			}
+// contact
+			if (cont == '') {
+				alert("Enter Contact Number ..!");
+				document.getElementById('contact').focus();
+				return false;
+			}
+			else {
+				if (cont.length < 10 ) {
+					alert("Enter Valid Number...!");
+					document.getElementById('contact').focus();
+					return false;
+				}
+			}
+//Gender
+			if((gender1.checked ==false) && ( gender2.checked==false)){
+				alert("You must select male or female");
+           		 return false;
+			}
+//Hobby
+			var a = document.getElementsByClassName('cbhobby');
+			var temp =0;
+			for(var i= 0 ;i<a.length;i++)
+			{
+				if(a[i].checked==true)
+				{
+					temp++;
+				}
+			}
+			if(temp<2)
+			{
+				alert("Select atleast 2 hobby...!");
+				return false;
+			}
+			
+			
+		}
+	</script>
+</head>
+
+<body>
+
+	<form onsubmit="return data()" name="form1">
+		Name  : 	<input type="text" id="name" name="name1"><br><br>
+		Email  : 	<input type="text" id="email" name="email"><br><br>
+		PassWord :  <input type="text" id="pass" name=""><br><br>
+		Confirm PassWord :  <input type="text" id="pass1" name=""><br><br>
+		Contact No :<input type="text" id="contact"><br><br>
+		Gender :	<input type="radio" name="Gender"  value="male" id="gen1"> Male 
+				    <input type="radio" name="Gender" value="female"  id="gen2">Female  <br><br>
+		Hobby :		<input type="checkbox" name="" class="cbhobby" id="">Reading
+			 		<input type="checkbox" name="" class="cbhobby" id="">Writting
+			 		<input type="checkbox" name="" class="cbhobby" id="">Travelling
+			 		<input type="checkbox" name="" class="cbhobby" id="">Cricket
+			 		<input type="checkbox" name="" class="cbhobby" id="">Eating<br><br>
+					<input type="submit" value="Click Here" name="">
+	</form>
+
+</body>
+
+</html>

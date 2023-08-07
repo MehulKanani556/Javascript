@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Student Result</title>
+
+	<script type="text/javascript">
+		var z = 0;
+		var data = [];
+		var arr = [];
+		function getdata() {
+			var name = document.getElementById('name').value;
+			var s1 = document.getElementById('s1').value;
+			var s2 = document.getElementById('s2').value;
+			var s3 = document.getElementById('s3').value;
+			var s4 = document.getElementById('s4').value;
+			var s5 = document.getElementById('s5').value;
+
+			var obj = {
+				name: name,
+				s1: s1,
+				s2: s2,
+				s3: s3,
+				s4: s4,
+				s5: s5
+			};
+			data.push(obj);
+			dis(data);
+
+
+
+		}
+		var html = "";
+		var h1 = "";
+		function dis(data) {
+			var div = document.getElementById('myDiv');
+
+			data.map((item) => {
+				html = `<tr>
+					<td>${item.name}</td>
+					<td>${item.s1}</td>
+					<td>${item.s2}</td>
+					<td>${item.s3}</td>
+					<td>${item.s4}</td>
+					<td>${item.s5}</td>
+					<td><input type="button" onclick="del(${z})" value="Delete"></td>
+					</tr>
+				`
+				z++;
+			});
+			div.innerHTML += html;
+			// return false;
+		}
+		function del(get) {
+
+			// document.getElementById('myDiv').deleteRow(get);
+			data.splice(get, 1);
+			console.log(data);
+			arr = data;
+			div.innerHTML = "";
+			var h = `<table id="div" border="1">
+		<tr>
+			<th>Name</th>
+			<th>Subject 1</th>
+			<th>Subject 2</th>
+			<th>Subject 3</th>
+			<th>Subject 4</th>
+			<th>Subject 5</th>
+		</tr>`;
+		div.innerHTML += h;
+
+			for (var i = 0; i < arr.length; i++) {
+				h1 = `<tr>
+					<td>${arr[i].name}</td>
+					<td>${arr[i].s1}</td>
+					<td>${arr[i].s2}</td>
+					<td>${arr[i].s3}</td>
+					<td>${arr[i].s4}</td>
+					<td>${arr[i].s5}</td>
+					<td><input type="button" onclick="del(${z})" value="Delete"></td>
+					</tr>
+				`
+				div.innerHTML += h1;
+			}
+
+
+
+
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<form>
+		<label> Name : </label><input type="text" placeholder="Enter Your Name" id="name" class="data" name=""><br><br>
+		<label> Subject 1: </label><input type="text" placeholder="Subject 1" id="s1" class="data" name=""><br><br>
+		<label> Subject 2: </label><input type="text" placeholder="Subject 2" id="s2" class="data" name=""><br><br>
+		<label> Subject 3: </label><input type="text" placeholder="Subject 3" id="s3" class="data" name=""><br><br>
+		<label> Subject 4: </label><input type="text" placeholder="Subject 4" id="s4" class="data" name=""><br><br>
+		<label> Subject 5: </label><input type="text" placeholder="Subject 5" id="s5" class="data" name=""><br><br>
+		<input type="submit" value="Click" onclick="getdata(); return false" name="">
+
+
+	</form>
+
+	<table id="div" border="1">
+		<tr>
+			<th>Name</th>
+			<th>Subject 1</th>
+			<th>Subject 2</th>
+			<th>Subject 3</th>
+			<th>Subject 4</th>
+			<th>Subject 5</th>
+		</tr>
+		<tbody id="myDiv">
+
+		</tbody>
+	</table>
+
+
+
+</body>
+
+</html>

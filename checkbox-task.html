@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Check Box Task 1</title>
+	<script type="text/javascript">
+		function data(){
+			var z=1;
+			for (var i = 1; i <= 10; i++) {
+				for (var j = 1; j <=10; j++) {
+						document.write('<input type="Checkbox" onchange="fun('+ z +')"  id="a' + z + '" name="">');
+						z++;
+				}
+				document.write('<br>');
+			}
+			
+		}
+		function fun(y){
+			var x = document.getElementById('a1');
+			if(y==1){
+				for (var i = 1; i <=100; i++) {
+					document.getElementById('a'+i).checked = true;
+				}
+			}else if(y==2){
+				for (var i = 1; i <=10; i++) {
+					document.getElementById('a'+i).checked = true;
+				}
+			}
+			
+		}
+	</script>
+</head>
+<body onload="data()">
+
+	
+	
+
+</body>
+</html>

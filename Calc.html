@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Modern Calculator</title>
+	<style type="text/css">
+		input{
+			padding: 10px;
+		}
+		.bs{
+			padding: 10px;
+    		font-size: 12px;
+		}
+	</style>
+	<script type="text/javascript">
+		var firstval,lastval,sign;
+		function va(z){
+
+			 document.getElementById('ans').value += z;						
+		}
+
+		function sum(a){
+			firstval = document.getElementById('ans').value;
+			document.getElementById('ans').value = '';
+			if(a == 15){
+				var mod = firstval /100;
+			document.getElementById('ans').value = mod;
+			}else if(a == 16){
+				document.getElementById('ans').value = "";
+			}else if(a == 17){
+				var le = firstval.length;
+				var sli = firstval.slice(0,le-1);
+				document.getElementById('ans').value = sli;
+			}else{
+				sign = a;
+			}
+		}
+		function lastremove() {
+			document.getElementById('ans').value = 0;			
+		}
+
+		function equal(){
+			lastval = document.getElementById('ans').value;
+			if(sign == 11){
+				var ans = parseFloat(firstval) + parseFloat(lastval);
+			}else if(sign == 12){
+				var ans = parseFloat(firstval) - parseFloat(lastval);
+			}else if(sign == 13){
+				var ans = parseFloat(firstval) * parseFloat(lastval);
+			}else if(sign == 14){
+				var ans = parseFloat(firstval) / parseFloat(lastval);
+			}
+			document.getElementById('ans').value = ans;
+		}
+		
+		
+	</script>
+</head>
+<body>
+<form>
+	<input type="text " id="ans" readonly  name=""><br><br>
+	<input type="button" value=" % " onclick="sum(15)"  name="">
+	<input type="button" value="CE"  onclick="lastremove()" name="">
+	<input type="button" value=" C " onclick="sum(16)" name="">
+	<input type="button" class="bs" value="⌫ " onclick="sum(17)" ><br><br>
+	<input type="button" value=" 7 &nbsp;"  onclick="va(7)" name="">
+	<input type="button" value=" 8 &nbsp;"  onclick="va(8)" name="">
+	<input type="button" value=" 9 &nbsp;"  onclick="va(9)" name="">
+	<input type="button" value=" * &nbsp;"  onclick="sum(13)" name=""><br><br>
+	<input type="button" value=" 4 &nbsp;"  onclick="va(4)" name="">
+	<input type="button" value=" 5 &nbsp;"  onclick="va(5)" name="">
+	<input type="button" value=" 6 &nbsp;"  onclick="va(6)" name="">
+	<input type="button" value=" - &nbsp;"  onclick="sum(12)" name=""><br><br>
+	<input type="button" value=" 1 &nbsp;"  onclick="va(1)" name="">
+	<input type="button" value=" 2 &nbsp;"  onclick="va(2)" name="">
+	<input type="button" value=" 3 &nbsp;"  onclick="va(3)" name="">
+	<input type="button" value=" + &nbsp;"  onclick="sum(11)" name=""><br><br>
+	<input type="button" value=" ÷ &nbsp;"  onclick="sum(14)" name="">
+	<input type="button" value=" 0 &nbsp;"  onclick="va(0)" name="">
+	<input type="button" value=" . &nbsp;"  onclick="va('.')" name="">
+	<input type="button" value="  = &nbsp;" onclick="equal()"  name="">
+</form>
+</body>
+</html>

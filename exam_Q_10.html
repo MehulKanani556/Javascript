@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div{
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            margin-left: 20px;
+            color: white;
+        }
+        .main{
+            display: flex;
+        }
+        .btn{
+            margin:20px 40px;
+        }
+    </style>
+    <script>
+        
+        function col(z){
+            var y = document.getElementById('b'+z).value;
+            var x =document.getElementsByClassName('div');
+
+            for(var i=0 ;i<x.length;i++){
+                x[i].style.backgroundColor = "black";
+            }
+            x[z-1].style.backgroundColor = y;
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+    </div>
+    <div class="main">
+        <input type="button"  class="btn"  value="red"    onclick="col(1)" id="b1">
+        <input type="button"  class="btn"  value="green"  onclick="col(2)" id="b2">
+        <input type="button"  class="btn" value="blue"    onclick="col(3)" id="b3">
+        <input type="button"  class="btn"  value="yellow" onclick="col(4)" id="b4">
+    </div>
+</body>
+</html>

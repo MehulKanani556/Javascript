@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <script>
+        var city="Surat";
+        var city2 = "Surat";
+        var name = "Mehul";
+//============================ String Function ========================================
+        // 1. Big()
+            document.write("<br> Big = "+city.big());
+        // 2.Small()
+            document.write("<br> Small = "+city.small());
+        // 3.Bold()
+            document.write("<br> Bold = "+city.bold());
+        // 4.Italics()
+            document.write("<br> Italics = "+city.italics());
+        // 5.strike()
+            document.write("<br> Strike = "+city.strike());
+        // 6.Fontcolor()
+            document.write("<br> Fontcolor = "+city.fontcolor('red'));
+        // 7.Fontsize()
+            document.write("<br> Fontsize = "+city.fontsize(2));
+        // 8.link()
+            document.write("<br> Link = "+city.link('Image/1.jpg'));
+        // 9.Length()
+            document.write("<br> Length = "+city.length);
+        // 10.CharAt()
+            document.write("<br> CharAt = "+city.charAt(3));
+        // 11.Concat()
+            document.write("<br> Concat = "+city.concat(name));
+        // 12.IndexOf()
+            document.write("<br> IndexOf = "+city.indexOf("a"));
+        // 13.LastIndexOf()
+            document.write("<br> Last Index Of = "+city.lastIndexOf("a"));
+        // 14.Match()
+            var com = city.match(city2)
+            if(com!=null){
+                document.write("<br>Match = Match String ");
+            }else{
+                document.write("<br>Match = Not Match  String ");
+            }
+
+        // 15.replace()
+            var n="Be Creative";
+            var mystr = ("<br>Replace = "+n.replace("Be","Always"));
+            document.write(mystr);
+            document.write(n);
+        // 16.Search()
+            var searc = (n.search("creative"));
+            if(searc!=0){
+                document.write("<br>Search = Found");
+            }else{
+                document.write("<br>Search =  Not Found");
+            }
+        // 17.Slice()/Substr()/Substring()
+            document.write("<br> Slice = "+city.slice(0,3));
+        
+        // 18.To Lower Case()
+            document.write("<br>ToLowerCase = "+city.toLowerCase());
+        // 19.To Upper Case()
+            document.write("<br>ToUpperCase = "+city.toUpperCase());
+
+//============================= Math Function =========================================
+
+
+        // 1.abs()
+
+            var a=-3;
+            document.write("<br>Abs = "+Math.abs(a));
+
+        // 2.Ceil()
+            var a = 3.6;
+            document.write("<br>Ceil = "+Math.ceil(a));
+
+        // 3.Floor()
+            document.write("<br>Floor = "+Math.floor(a));
+
+        // 4.pow()
+            document.write("<br>Pow = "+Math.pow(3,2));
+
+        // 5.Max()
+            document.write("<br>Max = "+Math.max(10,20,30));
+
+        // 6.Min()
+            document.write("<br>Min = "+Math.min(10,20,30));
+        
+        // 7.Random()
+            document.write("<br>Random = "+Math.random());
+
+        // 8.Round()
+            document.write("<br>Round = "+Math.round(15.40));
+
+
+
+
+
+
+
+         
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tic - Tac - Teo</title>
+	<style type="text/css">
+		body{
+			background-color: black;			
+		}
+		form{
+			text-align: center;
+			margin-top: 200px;
+		}
+		input{
+			padding: 20px 30px;
+			border: none;
+			background-color: white;
+			margin-bottom: 5px;
+		}
+	</style>
+	<script type="text/javascript">
+		var a = 1;
+		
+		function fun(z){
+			var x = 'X';
+			var o = 'O';
+				// document.getElementById('b'+z).value = s;
+				
+			
+			for (var i = 0; i < 9; i++) {
+				if(a==1){
+					document.getElementById('b'+z).value = x;
+					document.getElementById('b'+z).disabled = true;
+					document.getElementById('b'+z).style.color = "black";
+					document.getElementById('b'+z).style.fontWeight = "bold";
+					a = 0;
+				}else{
+					document.getElementById('b'+z).value = o;
+					document.getElementById('b'+z).disabled = true;
+					a = 1;
+				}
+				
+
+			}
+			win();
+			
+			/*if (z==1) {
+				document.getElementById('b1').value = "X";
+			}else if(z==2){
+				document.getElementById('b2').value = "X";
+			}else if(z==3){
+				document.getElementById('b3').value = "X";
+			}else if(z==4){
+				document.getElementById('b4').value = "X";
+			}else if(z==5){
+				document.getElementById('b5').value = "X";
+			}else if(z==6){
+				document.getElementById('b6').value = "X";
+			}else if(z==7){
+				document.getElementById('b7').value = "X";
+			}else if(z==8){
+				document.getElementById('b8').value = "X";
+			}else if(z==9){
+				document.getElementById('b9').value = "X";
+			}*/		
+		}
+		function win(){
+				var c1 = document.getElementById('b1').value ;
+				var c2 = document.getElementById('b2').value ;
+				var c3 = document.getElementById('b3').value ;
+				var c4 = document.getElementById('b4').value ;
+				var c5 = document.getElementById('b5').value ;
+				var c6 = document.getElementById('b6').value ;
+				var c7 = document.getElementById('b7').value ;
+				var c8 = document.getElementById('b8').value ;
+				var c9 = document.getElementById('b9').value ;
+
+			if ((c1=='X' && c5=='X' && c9=='X')||(c1=='X' && c2=='X' && c3=='X')||(c1=='X' && c4=='X' && c7=='X')||(c2=='X' && c5=='X' && c8=='X')||(c3=='X' && c6=='X' && c9=='X')||(c3=='X' && c5=='X' && c7=='X')||(c4=='X' && c5=='X' && c6=='X')||(c7=='X' && c8=='X' && c9=='X')) {
+					
+						document.getElementById('win').value = "Player 1 Is Win";
+
+
+						for (var i = 1; i <= 9; i++) {
+							// document.getElementById('b'+i).value = '  ';
+							// document.getElementById('b'+i).disabled = false;
+							document.getElementById('b'+i).disabled = true;
+							document.getElementById('b'+i).style.backgroundColor = "lightgrey";
+
+						}
+
+				}else if((c1=='O' && c5=='O' && c9=='O')||(c1=='O' && c2=='O' && c3=='O')||(c1=='O' && c4=='O' && c7=='O')||(c2=='O' && c5=='O' && c8=='O')||(c3=='O' && c6=='O' && c9=='O')||(c3=='O' && c5=='O' && c7=='O')||(c4=='O' && c5=='O' && c6=='O')||(c7=='O' && c8=='O' && c9=='O')){
+						document.getElementById('win').value = "Player 2 Is Win";
+						for (var i = 1; i <= 9; i++) {
+							// document.getElementById('b'+i).value = '  ';
+							// document.getElementById('b'+i).disabled = false;
+							document.getElementById('b'+i).disabled = true;
+
+						}
+						
+				}else if (c1!='  ' && c2!='  ' && c3!= '  ' && c4!='  ' && c5!='  ' && c6!='  ' && c7!='  ' && c8!='  ' && c9!='  '){
+
+						document.getElementById('win').value = "Draw";
+
+				}
+			
+		}
+		
+
+			
+	</script>
+</head>
+<body>
+
+	<form>
+		<input type="button" class="btn" id="b1" value="  " onclick="fun(1)" name="">
+		<input type="button" value="  " id="b2" onclick="fun(2)" name="">
+		<input type="button" value="  " id="b3" onclick="fun(3)" name=""><br>
+		<input type="button" value="  " id="b4" onclick="fun(4)" name="">
+		<input type="button" value="  " id="b5" onclick="fun(5)" name="">
+		<input type="button" value="  " id="b6" onclick="fun(6)" name=""><br>
+		<input type="button" value="  " id="b7" onclick="fun(7)" name="">
+		<input type="button" value="  " id="b8" onclick="fun(8)" name="">
+		<input type="button" value="  " id="b9" onclick="fun(9)" name="">
+	<br><br><br>
+		<input type="text"  readonly value="Player 1 = X" name="">
+		<input type="text" readonly value="Player 2 = O"  name=""><br>
+		<input type="text" readonly id="win" name="">
+		<input type="button" value="New Game" id="newgame" onclick="window.location.reload();" name="">
+	</form>	
+</body>
+</html>
